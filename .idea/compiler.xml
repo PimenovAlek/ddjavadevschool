@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="test" />
         <module name="core" />
         <module name="mailservice" />
       </profile>
@@ -14,6 +15,7 @@
       <module name="core" target="1.5" />
       <module name="DD" target="1.5" />
       <module name="mailservice" target="1.5" />
+      <module name="test" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
