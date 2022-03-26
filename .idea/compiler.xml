@@ -6,9 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hrsystem" />
+        <module name="core" />
+        <module name="mailservice" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel>
+      <module name="core" target="1.5" />
+      <module name="DD" target="1.5" />
+      <module name="mailservice" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
