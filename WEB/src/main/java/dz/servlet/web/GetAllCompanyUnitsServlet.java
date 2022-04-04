@@ -39,14 +39,16 @@ public class GetAllCompanyUnitsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<CompanyUnit> companyUnits = this.daoCompanyUnit.getAll();
-
+        resp.setCharacterEncoding("UTF-8");
         try(PrintWriter pw = resp.getWriter()){
             resp.setContentType("application/json; charset=utf-8");
+
             for(CompanyUnit cu : companyUnits){
                 List<EmployeeCard> employeeCards = this.daoEmployeeCard.getEmployeesFromUnit(cu.getId());
                 cu.setEmployees(employeeCards);
-                pw.write(objectMapper.writeValueAsString(cu));
+
             }
+            pw.write(objectMapper.writeValueAsString(companyUnits));
         }
     }
 

@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @WebServlet(name = "CompanyUnitServlet", urlPatterns = "/company_unit")
@@ -33,6 +32,7 @@ public class CompanyUnitServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
+
         daoCompanyUnit = new DaoCompanyUnit();
         daoEmployeeCard = new DaoEmployeeCard();
         objectMapper = new ObjectMapper();
@@ -48,7 +48,7 @@ public class CompanyUnitServlet extends HttpServlet {
             CompanyUnit companyUnit = this.daoCompanyUnit.get(Long.parseLong(id));
             List<EmployeeCard> employeeCards = this.daoEmployeeCard.getEmployeesFromUnit(Long.parseLong(id));
             companyUnit.setEmployees(employeeCards);
-
+            resp.setCharacterEncoding("UTF-8");
             try(PrintWriter writer = resp.getWriter()){
                 resp.setContentType("application/json; charset=utf-8");
                 writer.write(objectMapper.writeValueAsString(companyUnit));

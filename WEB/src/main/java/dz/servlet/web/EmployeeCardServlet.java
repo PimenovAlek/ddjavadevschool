@@ -39,7 +39,7 @@ public class EmployeeCardServlet extends HttpServlet {
         String id  = req.getParameter("id");
         if(id != null){
             EmployeeCard employeeCard = this.daoEmployeeCard.get(Long.parseLong(id));
-
+            resp.setCharacterEncoding("UTF-8");
             try(PrintWriter pw = resp.getWriter()){
                 resp.setContentType("application/json; charset=utf-8");
                 pw.write(objectMapper.writeValueAsString(employeeCard));

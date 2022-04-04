@@ -35,9 +35,9 @@ public class UserPositionServlet extends HttpServlet {
         String id  = req.getParameter("id");
         if(id != null){
             UserPosition userPosition = this.daoUserPosition.get(Long.parseLong(id));
+            resp.setCharacterEncoding("UTF-8");
             try(PrintWriter writer = resp.getWriter()){
                 resp.setContentType("application/json; charset=utf-8");
-                resp.setCharacterEncoding("UTF-8");
                 writer.write(objectMapper.writeValueAsString(userPosition));
             }
         }else{

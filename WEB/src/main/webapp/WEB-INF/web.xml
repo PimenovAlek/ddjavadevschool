@@ -28,6 +28,10 @@
     <servlet-name>GetAllEmployeeCardsServlet</servlet-name>
     <servlet-class>dz.servlet.web.GetAllEmployeeCardsServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>GetAllUserPositionServlet</servlet-name>
+    <servlet-class>dz.servlet.web.GetAllUserPositionServlet</servlet-class>
+  </servlet>
 
 
   <servlet-mapping>
@@ -50,6 +54,11 @@
     <servlet-name>GetAllEmployeeCardsServlet</servlet-name>
     <url-pattern>/all_employee_cards</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetAllUserPositionServlet</servlet-name>
+    <url-pattern>/all_user_positions</url-pattern>
+  </servlet-mapping>
+
   <display-name>hrsys</display-name>
 </web-app>
 
