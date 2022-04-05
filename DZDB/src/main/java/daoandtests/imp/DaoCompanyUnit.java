@@ -90,7 +90,7 @@ public class DaoCompanyUnit implements Dao<CompanyUnit> {
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE company_unit set name = ?, headquarter_id = ? where id = ?");
             preparedStatement.setLong(3, o.getId());
             preparedStatement.setString(1, o.getName());
-            preparedStatement.setLong(2, o.getId());
+            preparedStatement.setLong(2, o.getHeadquarterId());
             preparedStatement.executeUpdate();
 
         }catch (SQLException se){

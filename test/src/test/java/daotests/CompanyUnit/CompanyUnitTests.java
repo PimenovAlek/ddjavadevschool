@@ -49,6 +49,16 @@ public class CompanyUnitTests {
         }
         Assert.assertTrue(res);
     }
+    @Test
+    public void updateCompanyUnit(){
+        CompanyUnit companyUnit = daoCompanyUnit.get(11);
+        companyUnit.setHeadquarterId(5l);
+
+        daoCompanyUnit.update(companyUnit);
+    }
+
+
+
 
 
 
