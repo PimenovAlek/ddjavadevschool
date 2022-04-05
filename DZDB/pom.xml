@@ -15,7 +15,6 @@
     <packaging>jar</packaging>
     <properties>
         <postgresql.version>42.3.3</postgresql.version>
-
         <dbcp2.version>2.9.0</dbcp2.version>
         <liquibase.version>4.9.1</liquibase.version>
     </properties>
@@ -45,8 +44,15 @@
                     <artifactId>liquibase-maven-plugin</artifactId>
                     <version>4.9.1</version>
                     <configuration>
-                       <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+                        <propertyFile>src/main/resources/liquibase.properties</propertyFile>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.postgresql</groupId>
+                            <artifactId>postgresql</artifactId>
+                            <version>42.3.3</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </build>
